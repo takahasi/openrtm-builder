@@ -21,7 +21,7 @@ before_build:
   - cd c:\projects
   - ps: Start-FileDownload 'http://openrtm.org/pub/omniORB/win32/omniORB-4.2.1/omniORB-4.2.1-win64-vc14-py27.zip'
   - 7z x omniORB-4.2.1-win64-vc14-py27.zip
-  - ps: Start-FileDownload 'http://openrtm.org:8080/view/00_C++/job/%TARGET_JOB%/ws/OpenRTM-aist-win32.zip'
+  - ps: Start-FileDownload 'http://openrtm.org:8080/view/00_C++/job/01_openrtm-cxx-dist-trunk/ws/OpenRTM-aist-win32.zip'
   - 7z x OpenRTM-aist-win32.zip
   - cd OpenRTM-aist\
   - env
