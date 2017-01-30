@@ -29,7 +29,6 @@ addons:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install libtool; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install subversion; fi
 before_script:
   - svn export http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist
   - cd OpenRTM-aist
