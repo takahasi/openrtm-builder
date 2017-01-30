@@ -23,6 +23,7 @@ addons:
       - libomniorb4-dev
       - omniidl
       - omniorb
+      - omniorb-nameserver
 before_script:
   - svn export http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist
   - cd OpenRTM-aist
