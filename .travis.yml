@@ -1,0 +1,22 @@
+language: cpp
+sudo: required
+matrix:
+  include:
+      - os: linux
+        compiler: gcc
+      - os: linux
+        dist: trusty
+        compiler: gcc
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y --force-yes subversion
+  - sudo apt-get install -y --force-yes gcc g++ make uuid-dev
+  - sudo apt-get install -y --force-yes libomniorb4-dev omniidl
+  - svn export http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist
+  - cd OpenRTM-aist
+  - sh build/autogen
+  - ./confugure --prefix=/usr
+script:
+  - make
+install:
+  - sudo make install
