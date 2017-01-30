@@ -12,7 +12,7 @@ build:
 
 # scripts to run before build
 before_build:
-  - set ARCH=X86_64
+  - set ARCH=x86_64
   - set PYTHON_DIR=C:\Python27
   - set PYTHONPATH=%PYTHON_DIR%\Lib
   - set OMNI_VERSION=4.2.1
