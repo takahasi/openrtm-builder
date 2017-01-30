@@ -16,7 +16,7 @@ before_install:
   - svn export http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist
   - cd OpenRTM-aist
   - sh build/autogen
-  - ./confugure --prefix=/usr
+  - ./configure --prefix=/usr
 script:
   - make
 install:
