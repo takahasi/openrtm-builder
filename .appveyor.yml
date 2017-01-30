@@ -12,7 +12,7 @@ build:
 
 # scripts to run before build
 before_build:
-  - cd dc:\projects
+  - cd c:\projects
   - ps: Start-FileDownload 'http://openrtm.org/pub/omniORB/win32/omniORB-4.2.1/omniORB-4.2.1-win64-vc14-py27.zip'
   - 7z x http://openrtm.org/pub/omniORB/win32/omniORB-4.2.1/omniORB-4.2.1-win64-vc14-py27.zip
-  - set OMNI_ROOT=C:\project\omniORB-4.2.1-win64-vc14
+  - set OMNI_ROOT=C:\projects\omniORB-4.2.1-win64-vc14
