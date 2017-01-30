@@ -11,6 +11,7 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y --force-yes subversion
   - sudo apt-get install -y --force-yes gcc g++ make uuid-dev
+  - sudo apt-get install -y --force-yes libboost-filesystem-dev doxygen
   - sudo apt-get install -y --force-yes libomniorb4-dev omniidl
   - svn export http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist
   - cd OpenRTM-aist
