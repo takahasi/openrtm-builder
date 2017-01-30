@@ -9,6 +9,9 @@ matrix:
       compiler: gcc
     - os: osx
       compiler: clang
+    - os: osx
+      osx_image: xcode8.2
+      compiler: clang
 addons:
   apt:
     packages:
