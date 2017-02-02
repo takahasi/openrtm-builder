@@ -16,5 +16,5 @@ install:
 before_build:
   - cd OpenRTM-aist\ && build.bat
 
-build: off
+build:
 
