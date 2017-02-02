@@ -1,10 +1,10 @@
-clone_folder: c:\projects\
+clone_folder: c:\projects
 
 environment:
-  - ARCH: x86_64
-  - OMNI_VERSION: 4.2.1
-  - RTM_VC_VERSION: vc14
-  - OMNI_ROOT: C:\projects\omniORB-%OMNI_VERSION%-win64-%RTM_VC_VERSION%-py27
+  ARCH: x86_64
+  OMNI_VERSION: 4.2.1
+  RTM_VC_VERSION: vc14
+  OMNI_ROOT: C:\projects\omniORB-%OMNI_VERSION%-win64-%RTM_VC_VERSION%-py27
 
 install:
   - ps: Start-FileDownload 'http://openrtm.org/pub/omniORB/win32/omniORB-4.2.1/omniORB-4.2.1-win64-vc14-py27.zip'
