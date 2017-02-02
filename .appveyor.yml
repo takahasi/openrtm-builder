@@ -1,27 +1,22 @@
-# Operating system (build VM template)
-os: Visual Studio 2015
+clone_folder: c:\projects\
 
-# clone directory
-clone_folder: c:\projects\OpenRTM-aist
+environment:
+  - ARCH: x86_64
+  - PYTHON_DIR: C:\Python27
+  - PYTHONPATH: %PYTHON_DIR%\Lib
+  - OMNI_VERSION: 4.2.1
+  - RTM_VC_VERSION: vc14
+  - OMNI_ROOT: C:\projects\omniORB-%OMNI_VERSION%-win64-%RTM_VC_VERSION%-py27
 
 install:
-# by default, all script lines are interpreted as batch
-
-build:
-
-# scripts to run before build
-before_build:
-  - set ARCH=x86_64
-  - set PYTHON_DIR=C:\Python27
-  - set PYTHONPATH=%PYTHON_DIR%\Lib
-  - set OMNI_VERSION=4.2.1
-  - set VC_VERSION=14
-  - set OMNI_ROOT=C:\projects\omniORB-%OMNI_VERSION%-win64-vc%VC_VERSION%-py27
-  - cd c:\projects
   - ps: Start-FileDownload 'http://openrtm.org/pub/omniORB/win32/omniORB-4.2.1/omniORB-4.2.1-win64-vc14-py27.zip'
   - 7z x omniORB-4.2.1-win64-vc14-py27.zip
   - ps: Start-FileDownload 'http://openrtm.org:8080/view/00_C++/job/01_openrtm-cxx-dist-trunk/ws/OpenRTM-aist-win32.zip'
   - 7z x OpenRTM-aist-win32.zip
-  - cd OpenRTM-aist\
   - env
-  - build.bat
+
+before_build:
+  - cd OpenRTM-aist\ && build.bat
+
+build: off
+
