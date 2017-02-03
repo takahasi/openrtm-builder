@@ -3,14 +3,15 @@ clone_folder: c:\projects
 environment:
   ARCH: x86_64
   OMNI_VERSION: 4.2.1
-  RTM_VC_VERSION: vc14
+  VC_VERSION: 14
   OMNI_ROOT: C:\projects\omniORB-%OMNI_VERSION%-win64-%RTM_VC_VERSION%-py27
+  RTM_ARCHIVE: OpenRTM-aist-win32.zip
 
 install:
-  - ps: Start-FileDownload 'http://openrtm.org/pub/omniORB/win32/omniORB-4.2.1/omniORB-4.2.1-win64-vc14-py27.zip'
-  - 7z x omniORB-4.2.1-win64-vc14-py27.zip
-  - ps: Start-FileDownload 'http://openrtm.org:8080/view/00_C++/job/01_openrtm-cxx-dist-trunk/ws/OpenRTM-aist-win32.zip'
-  - 7z x OpenRTM-aist-win32.zip
+  - ps: Start-FileDownload 'http://openrtm.org/pub/omniORB/win32/omniORB-$env:OMNI_VERSION/omniORB-$env:OMNI_VERSION-win64-vc$env:VC_VERSION-py27.zip'
+  - ps: 7z x "omniORB-$env:OMNI_VERSION-win64-vc$env:VC_VERSION-py27.zip"
+  - ps: Start-FileDownload 'http://openrtm.org:8080/view/00_C++/job/01_openrtm-cxx-dist-trunk/ws/$env:RTM_ARCHIVE'
+  - ps: 7z x "$env:RTM_ARCHIVE"
   - env
 
 before_build:
