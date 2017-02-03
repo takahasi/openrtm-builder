@@ -8,10 +8,14 @@ environment:
   RTM_ARCHIVE: OpenRTM-aist-win32.zip
 
 install:
-  - ps: Start-FileDownload 'http://openrtm.org/pub/omniORB/win32/omniORB-$env:OMNI_VERSION/omniORB-$env:OMNI_VERSION-win64-vc$env:VC_VERSION-py27.zip'
+  - echo "http://openrtm.org/pub/omniORB/win32/omniORB-$env:OMNI_VERSION/omniORB-$env:OMNI_VERSION-win64-vc$env:VC_VERSION-py27.zip"
+  - ps: Start-FileDownload "http://openrtm.org/pub/omniORB/win32/omniORB-$env:OMNI_VERSION/omniORB-$env:OMNI_VERSION-win64-vc$env:VC_VERSION-py27.zip"
   - ps: 7z x "omniORB-$env:OMNI_VERSION-win64-vc$env:VC_VERSION-py27.zip"
-  - ps: Start-FileDownload 'http://openrtm.org:8080/view/00_C++/job/01_openrtm-cxx-dist-trunk/ws/$env:RTM_ARCHIVE'
+
+  - echo "http://openrtm.org:8080/view/00_C++/job/01_openrtm-cxx-dist-trunk/ws/$env:RTM_ARCHIVE"
+  - ps: Start-FileDownload "http://openrtm.org:8080/view/00_C++/job/01_openrtm-cxx-dist-trunk/ws/$env:RTM_ARCHIVE"
   - ps: 7z x "$env:RTM_ARCHIVE"
+
   - env
 
 before_build:
