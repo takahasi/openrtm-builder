@@ -48,6 +48,6 @@ before_script:
 
 script:
   - make
-  - sudo make dist
+  - make dist
   - sudo make install
   - (cd src/ext/logger/fluentbit_stream/ && make && sudo make install)
