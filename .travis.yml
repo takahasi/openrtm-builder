@@ -27,6 +27,7 @@ addons:
       - uuid-dev
       - libboost-filesystem-dev
       - doxygen
+      - graphviz
       - libomniorb4-dev
       - omniidl
       - omniorb
