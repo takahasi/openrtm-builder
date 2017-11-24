@@ -39,6 +39,7 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install libtool; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install doxygen; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install omniorb; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip install PyYAML; fi
   - wget http://hp.vector.co.jp/authors/VA000501/qkcc100.zip
   - unzip qkcc100.zip && make && export PATH=$PATH:$PWD
 
